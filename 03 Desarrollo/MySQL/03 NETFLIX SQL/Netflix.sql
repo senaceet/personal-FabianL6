@@ -27,7 +27,8 @@ nombre_de_pago varchar(20) not null,
 descripcion text not null,
 fk_id_plan int(10) not null,
 primary key (id_tipo_pago),
-foreign key (fk_id_plan) references netflix_plan (id_plan)
+foreign key (fk_id_plan) references netflix_plan (id_plan),
+constraint fk_id_plan foreign key (fk_id_plan) references netflix_plan (id_plan) on update cascade
 );
 
 create table netflix_factura(
@@ -39,7 +40,9 @@ fk_id_plan int(10) not null,
 fk_id_tipo_pago varchar(10) not null,
 primary key (id_factura),
 foreign key (fk_id_plan) references netflix_plan (id_plan),
-foreign key (fk_id_tipo_pago) references netflix_tipo_pago (id_tipo_pago)
+foreign key (fk_id_tipo_pago) references netflix_tipo_pago (id_tipo_pago),
+constraint fk_id_plan foreign key (fk_id_plan) references netflix_plan (id_plan) on update cascade,
+constraint fk_id_tipo_pago foreign key (fk_id_tipo_pago) references netflix_tipo_pago (id_tipo_pago) on update cascade
 );
 
 create table netflix_usuario(
@@ -58,7 +61,11 @@ primary key (numero_documento, fk_id_documento),
 foreign key (fk_id_documento) references netflix_tipo_documento (id_documento),
 foreign key (fk_id_rol) references netflix_rol (id_rol),
 foreign key (fk_id_plan) references netflix_plan (id_plan),
-foreign key (fk_id_factura) references netflix_factura (id_factura)
+foreign key (fk_id_factura) references netflix_factura (id_factura),
+constraint fk_id_documento foreign key (fk_id_documento) references netflix_tipo_documento (id_documento) on update cascade,
+constraint fk_id_rol foreign key (fk_id_rol) references netflix_rol (id_rol) on update cascade,
+constraint fk_id_plan foreign key (fk_id_plan) references netflix_plan (id_plan) on update cascade,
+constraint fk_id_factura foreign key (fk_id_factura) references netflix_factura (id_factura) on update cascade
 );
 
 
@@ -70,7 +77,9 @@ fk_id_documento varchar(15) not null,
 fk_numero_documento varchar(15) not null,
 primary key (id_perfil),
 foreign key (fk_id_documento) references netflix_tipo_documento (id_documento),
-foreign key (fk_numero_documento) references netflix_usuario (numero_documento)
+foreign key (fk_numero_documento) references netflix_usuario (numero_documento),
+constraint fk_id_documento foreign key (fk_id_documento) references netflix_tipo_documento (id_documento) on update cascade,
+constraint fk_numero_documento foreign key (fk_numero_documento) references netflix_usuario (numero_documento) on update cascade
 );
 
 create table netflix_peliculas(
@@ -88,7 +97,9 @@ fk_id_perfil int(2) not null,
 fk_id_peliculas int(4) not null,
 primary key (fk_id_perfil, fk_id_peliculas),
 foreign key (fk_id_perfil) references netflix_perfil (id_perfil),
-foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas)
+foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas),
+constraint fk_id_perfil foreign key (fk_id_perfil) references netflix_perfil (id_perfil) on update cascade,
+constraint fk_id_peliculas foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas) on update cascade
 );
 
 
@@ -97,7 +108,8 @@ id_categoria int(10) not null,
 nombre_categoria varchar(20) not null,
 fk_id_peliculas int(4) not null,
 primary key (id_categoria),
-foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas)
+foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas),
+constraint fk_id_peliculas foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas) on update cascade
 );
 
 create table netflix_idioma(
@@ -111,7 +123,9 @@ fk_id_idioma int(2) not null,
 fk_id_peliculas int(4) not null,
 primary key (fk_id_idioma, fk_id_peliculas),
 foreign key (fk_id_idioma) references netflix_idioma (id_idioma),
-foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas)
+foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas),
+constraint fk_id_idioma foreign key (fk_id_idioma) references netflix_idioma (id_idioma) on update cascade,
+constraint fk_id_peliculas foreign key (fk_id_peliculas) references netflix_peliculas (id_peliculas) on update cascade
 );
 
 create table netflix_series(
@@ -131,7 +145,9 @@ fk_id_series int(2) not null,
 fk_id_idioma int(4) not null,
 primary key (fk_id_idioma, fk_id_series),
 foreign key (fk_id_idioma) references netflix_idioma (id_idioma),
-foreign key (fk_id_series) references netflix_series (id_series)
+foreign key (fk_id_series) references netflix_series (id_series),
+constraint fk_id_idioma foreign key (fk_id_idioma) references netflix_idioma (id_idioma) on update cascade,
+constraint fk_id_series foreign key (fk_id_series) references netflix_series (id_series) on update cascade
 );
 
 
@@ -140,7 +156,9 @@ fk_id_perfil int(2) not null,
 fk_id_series int(3) not null,
 primary key (fk_id_perfil, fk_id_series),
 foreign key (fk_id_perfil) references netflix_perfil (id_perfil),
-foreign key (fk_id_series) references netflix_series (id_series)
+foreign key (fk_id_series) references netflix_series (id_series),
+constraint fk_id_perfil foreign key (fk_id_perfil) references netflix_perfil (id_perfil) on update cascade,
+constraint fk_id_series foreign key (fk_id_series) references netflix_series (id_series) on update cascade
 );
 
 
@@ -151,7 +169,8 @@ numero int(2) not null,
 sinopsis varchar(30) not null,
 fk_id_series int(3) not null,
 primary key (id_temporadas),
-foreign key (fk_id_series) references netflix_series (id_series)
+foreign key (fk_id_series) references netflix_series (id_series),
+constraint fk_id_series foreign key (fk_id_series) references netflix_series (id_series) on update cascade
 );
 
 
@@ -163,5 +182,6 @@ sinopsis varchar(100) not null,
 duracion_capitulos time not null,
 fk_id_temporadas int(3) not null,
 primary key (id_capitulos),
-foreign key (fk_id_temporadas) references netflix_temporadas (id_temporadas)
+foreign key (fk_id_temporadas) references netflix_temporadas (id_temporadas),
+constraint fk_id_temporadas foreign key (fk_id_temporadas) references netflix_temporadas (id_temporadas) on update cascade
 );
