@@ -5,36 +5,39 @@ values (1, 'CC', 'Cedula de Ciudadania'),
 	   (2, 'CE', 'Cedula Extranjera'),
        (3, 'PAS', 'Pasaporte');
        
-       
 insert into netflix_rol (id_rol, nombre_rol)
 values 	(1, 'Administrador'),
 		(2, 'Usuario');
        
-insert into netflix_plan (id_plan, nombre_plan, caracteristicas_plan)
-values 	(1, 'Basico', '720p' ),
-		(2, 'Estandar', '1080p'),
-        (3, 'Premium', '1920p');
+insert into netflix_plan (id_plan, nombre_plan, caracteristicas_plan, costo_plan)
+values 	(1, 'Basico', '720p', '16.900' ),
+		(2, 'Estandar', '1080p', '24.900'),
+        (3, 'Premium', '1920p', '32.900');
+        
+insert into netflix_tipo_pago (id_tipo_pago, nombre_de_pago, descripcion)
+values 	(1, 'Tarjeta Debito o Credito', 'Visa, MasterCard, American Express, Diners Club'),
+        (2, 'Codigo Regalo', 'Pin o Codigo Netflix');
         
 insert into netflix_peliculas (id_peliculas, nombre_pelicula, duracion, año, sinopsis, calificacion, estado)
 values 	(1, 'Avengers Endgame', '03:10:00', '2019-04-25', 'Después de los devastadores eventos ocurridos en Vengadores: Infinity War, el universo está en ruinas debido a las acciones de Thanos, el Titán Loco.', '4.4', 1),
-		(2, 'El rey león', '01:58:00', '2019-07-19', 'Versión de acción real del clásico de animación de Disney de 1994.', '4.1', 1),
-        (3, 'Spider-Man: Lejos de casa', '02:10:00', '2019-07-05', 'Peter Parker decide dejar sus heroicidades a un lado y sale de viaje por Europa con sus amigos,Pero las vacaciones de verano darán un giro.', '3.9', 1),
-        (4, 'Capitana Marvel', '02:04:00', '2019-03-08', 'Ambientada en los años 90, esta nueva aventura nos presenta un periodo de la historia nunca antes visto en el Universo Cinematográfico de Marvel.', '3.1', 1),
+		(2, 'Rec', '01:20:00', '2007-11-23', 'Acompañada de un cámara, sera testigo del infierno en la tierra', '4.1', 1),
+        (3, 'Odisea en el espacio', '02:21:00', '1968-10-17', 'Una elipsis nos traslada desde la era prehistórica hasta la era espacial.', '4.8', 1),
+        (4, 'Ali', '02:38:00', '2002-04-26', 'Alí recrea la historia de este gran boxeador que mantuvo en vilo a los fans de este deporte durante años.', '3.1', 1),
         (5, 'Toy Story 4', '01:40:00', '2019-06-21', 'la pandilla de juguetes, están a punto de hacer un viaje familiar por carretera con Bonnie, su querida dueña.', '4.1', 1),
         (6, 'Aladdín', '02:09:00', '2019-05-24', 'Esta nueva adaptación musical en acción real del clásico de Disney Aladdín (1992)', '4.1', 1),
-        (7, 'Fast & Furious', '02:16:00', '2019-08-01', 'Luke Hobbs (Dwayne Johnson) es un leal policía, miembro de los Servicios de Seguridad del Cuerpo Diplomático de EEUU.', '3.8', 1),
+        (7, 'Interstellar', '02:16:00', '2014-08-01', 'La película presenta a un equipo de astronautas que viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad', '4.8', 1),
         (8, 'Gravity', '01:30:00', '2013-10-04', 'Se trata de su primera expedición a bordo de un cohete espacial.', '3.8', 1),
-        (9, 'The Wandering Earth', '02:05:00', '2019-05-01','Una inminente colisión con Júpiter amenaza la Tierra mientras los humanos buscan una nueva estrella.', '3.0', 1),
+        (9, 'Apolo 11', '01:33:00', '2019-06-16','16 de julio de 1969. Después de años de preparación y de intentos fallidos, la misión Apolo 11 de la NASA despega rumbo a la luna.', '4.6', 1),
 		(10, 'Joker', '02:09:00', '2019-10-04', 'Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Bruce Wayne/Batman.', '4.4', 1),
-        (11, 'entrenar a tu dragón 3', '01:44:00', '2019-02-22', 'La insólita amistad entre el adolescente vikingo Hipo y su fiel compañero dragón, el Furia Nocturna Desdentao, llega a su fin.', '4.2', 1),
-        (12, 'Pokémon Detective Pikachu', '01:45:00', '2019-05-19', 'Ryme City, una metrópoli futurista en la que los humanos y los Pokémon conviven en armonía.', '3.8', 1),
+        (11, 'La Pasión de Cristo', '01:44:00', '2004-02-25', 'El guion de la película se basa en los Evangelios', '4.2', 1),
+        (12, 'la vendedora de rosas', '01:20:00', '1998-08-26', 'La historia cuenta los acontecimientos vividos por Mónica, una niña de 13 años que vende rosas en la ciudad de Medellín', '3.8', 1),
         (13, 'It Capítulo dos', '02:50:00', '2019-09-06', 'Han pasado casi 30 desde que el Club de Perdedores formado por Bill, se enfrentaran al macabro y despiadado Pennywise.', '3.9', 1),
-        (14, 'The Secret Life of Pets 2', '01:26:00', '2019-08-09', 'Regresan el perro Max, mascotas que mantienen curiosos secretos en su vida en la ciudad de Nueva York cuando sus dueños no están en casa.', '3.9', 1),
+        (14, 'Grease', '01:10:00', '1978-08-09', 'es una película musical de 1978 ambientada en los años 60', '3.9', 1),
 		(15, 'Alita: Battle Angel', '02:02:00', '2019-02-19', 'Alita es una cyborg semi-humana a la que rescata de entre la chatarra el Doctor Dyson Ido, un científico que la reconstruye y la adopta como su hija.', '4.0', 1),
-		(16, 'Godzilla', '02:12:00', '2019-06-21', 'la agencia de criptografía y zoología Monarch tendrá que hacer heroicos esfuerzos.', '3.8', 1),
-		(17, 'Once Upon a Hollywood', '02:41:00', '2019-08-15', 'Los Ángeles, 1969.', '3.4', 1),
-		(18, '¡Shazam!', '02:12:00', '2019-04-05', 'Todos llevamos un superhéroe en nuestro interior. Solo es preciso un poco de magia para sacarlo.', '3.9', 1),
-		(19, 'Dumbo', '01:52:00', '2019-03-29', 'Adaptación en acción real de Dumbo, el clásico de la animación de Disney de 1941', '4.0', 1),
+		(16, 'No', '01:18:00', '2012-06-21', 'En 1988, la presión aumenta en contra del dictador chileno Augusto Pinochet, obligándolo a realizar un referéndum por su presidencia.', '3.8', 1),
+		(17, 'Titanic', '02:41:00', '1997-08-15', 'Titanic es una película estadounidense dramática de catástrofe', '4.4', 1),
+		(18, 'Police Story', '01:10:00', '2013-04-05', 'es una película de acción de China y Hong Kong de 2013', '3.9', 1),
+		(19, 'Malefica', '01:10:00', '2014-03-29', 'es una película estadounidense de fantasía basada en la malvada bruja y hada antagonista de la película de 1959', '4.0', 1),
         (20, 'John Wick: Chapter 3', '02:12:00', '2019-05-31', 'Con una recompensa de 14 millones de dólares por su cabeza, John Wick (Keanu Reeves) está en plena huída.', '4.1', 1);
         
 insert into netflix_series (id_series, nombre_serie, numero_de_temporadas, año, sinopsis, calificacion, estado)
@@ -68,10 +71,6 @@ values	(1, 'Spanish'),
         (6, 'French'),
         (7, 'Japanese');
 
-insert into netflix_tipo_pago (id_tipo_pago, nombre_de_pago, descripcion)
-values 	(1, 'Tarjeta Debito o Credito', 'Visa, MasterCard, American Express, Diners Club'),
-        (2, 'Codigo Regalo', 'Pin o Codigo Netflix');
-
 
 insert into netflix_usuario (numero_documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, contraseña, fk_id_documento, fk_id_rol, fk_id_plan)
 values 	('1023963637', 'Fabian', 'Andres', 'Lopez', 'Gil', 'falopez736@misena.edu.co', '1023963637666', 1, 1, 3),
@@ -97,24 +96,202 @@ values 	('1023963637', 'Fabian', 'Andres', 'Lopez', 'Gil', 'falopez736@misena.ed
         ('1027985215', 'Wilson', null, 'Torres', null, 'ecoopk@psu.edu', '161647099', 1, 2, 2);
 
 
-insert into netflix_factura (id_factura, fecha, hora, fk_id_plan, fk_id_tipo_pago, fk_numero_documento)
-values 	(1, '2019-10-20', '13:00:20', 1, 1, '1010256359'),
-		(2, '2019-10-25', '14:25:05', 1, 1, '1020256457'),
-        (3, '2019-10-25', '15:30:30', 3, 1, '1020476469'),
-        (4, '2019-10-27', '10:15:09', 3, 1, '1012585496'),
-        (5, '2019-10-29', '11:35:14', 2, 1, '1012584316'),
-        (6, '2019-10-29', '12:40:22', 2, 1, '1010364819'),
-        (7, '2019-10-29', '17:20:42', 3, 1, '1020391753'),
-        (8, '2019-11-05', '19:10:11', 1, 1, '1011968451'),
-        (9, '2019-11-07', '14:36:09', 2, 1, '1012974812'),
-        (10, '2019-11-07', '16:22:13', 2, 1, '1017894561'),
-        (11, '2019-11-07', '16:35:02', 3, 1, '1014568771'),
-        (12, '2019-11-09', '18:40:22', 3, 1, '1020544556'),
-        (13, '2019-11-09', '20:12:27', 2, 1, '1020587965'),
-        (14, '2019-11-14', '20:12:27', 1, 1, '1020778965'),
-        (15, '2019-11-17', '10:19:22', 1, 1, '1023947586'),
-        (16, '2019-11-17', '13:55:10', 3, 1, '1020785847'),
-        (17, '2019-11-22', '12:25:55', 3, 1, '1022457878'),
-        (18, '2019-11-22', '14:30:45', 2, 1, '1012456789'),
-        (19, '2019-11-25', '17:40:15', 3, 1, '1020739145'),
-        (20, '2019-11-26', '19:30:05', 2, 1, '1027985215');
+insert into netflix_factura (id_factura, fecha, hora, fk_id_plan, fk_id_tipo_pago, fk_numero_documento, fk_id_documento)
+values 	(1, '2019-10-20', '13:00:20', 1, 1, '1010256359', 1),
+		(2, '2019-10-25', '14:25:05', 1, 1, '1020256457', 1),
+        (3, '2019-10-25', '15:30:30', 3, 1, '1020476469', 1),
+        (4, '2019-10-27', '10:15:09', 3, 1, '1012585496', 1),
+        (5, '2019-10-29', '11:35:14', 2, 1, '1012584316', 1),
+        (6, '2019-10-29', '12:40:22', 2, 1, '1010364819', 1),
+        (7, '2019-10-29', '17:20:42', 3, 1, '1020391753', 1),
+        (8, '2019-11-05', '19:10:11', 1, 1, '1011968451', 1),
+        (9, '2019-11-07', '14:36:09', 2, 1, '1012974812', 1),
+        (10, '2019-11-07', '16:22:13', 2, 1, '1017894561', 1),
+        (11, '2019-11-07', '16:35:02', 3, 1, '1014568771', 1),
+        (12, '2019-11-09', '18:40:22', 3, 1, '1020544556', 1),
+        (13, '2019-11-09', '20:12:27', 2, 1, '1020587965', 1),
+        (14, '2019-11-14', '20:12:27', 1, 1, '1020778965', 1),
+        (15, '2019-11-17', '10:19:22', 1, 1, '1023947586', 1),
+        (16, '2019-11-17', '13:55:10', 3, 1, '1020785847', 1),
+        (17, '2019-11-22', '12:25:55', 3, 1, '1022457878', 1),
+        (18, '2019-11-22', '14:30:45', 2, 1, '1012456789', 1),
+        (19, '2019-11-25', '17:40:15', 3, 1, '1020739145', 1),
+        (20, '2019-11-26', '19:30:05', 2, 1, '1027985215', 1);
+        
+insert into netflix_perfil (id_perfil, nombre_perfil, avatar, fk_numero_documento, fk_id_documento)
+values 	(1, 'Admin', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\admin.PNG', '1023963637', 1),
+		(2, 'Jessica', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl1.PNG', '1010256359', 1),
+        (3, 'Daniel', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen1.PNG', '1020256457', 1),
+        (4, 'Adriana', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl2.PNG', '1020476469', 1),
+        (5, 'Sandra', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl3.PNG', '1012585496', 1),
+        (6, 'Carlos', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen2.PNG', '1012584316', 1),
+        (7, 'Luis', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen3.PNG', '1010364819', 1),
+        (8, 'Liliana', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl1.PNG', '1020391753', 1),
+        (9, 'Victor', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen1.PNG', '1011968451', 1),
+        (10, 'Sara', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl2.PNG', '1012974812', 1),
+        (11, 'Claudia', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl3.PNG', '1017894561', 1),
+        (12, 'Oscar', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen2.PNG', '1014568771', 1),
+        (13, 'Hector', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen3.PNG', '1020544556', 1),
+        (14, 'Samuel', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen1.PNG', '1020587965', 1),
+        (15, 'Isabel', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl1.PNG', '1020778965', 1),
+        (16, 'David', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen2.PNG', '1023947586', 1),
+        (17, 'Marco', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen3.PNG', '1020785847', 1),
+        (18, 'Angel', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen1.PNG', '1022457878', 1),
+        (19, 'Karen', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl2.PNG', '1012456789', 1),
+        (20, 'Stefanny', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatargirl3.PNG', '1020739145', 1),
+        (21, 'Wilson', 'F:\Andres\NETFLIX SQL\Imagenes Netflix_Perfil\avatarmen2.PNG', '1027985215', 1);
+        
+insert into netflix_perfil_peliculas (fk_id_perfil, fk_id_peliculas)
+value 	(1,1),(1,3),(1,15),
+		(2,5),(2,10),(2,17),
+        (3,5),(3,7),(3,13),
+        (4,11),(4,1),(4,16),
+        (5,8),(5,12),(5,2),
+        (6,8),(5,9),(5,1),
+        (7,13),(7,15),(7,17),
+        (8,5),(8,3),(8,18),
+        (9,13),(9,19),(9,11),
+        (10,2),(10,7),(10,4),
+        (11,1),(11,5),(11,7),
+        (12,5),(12,6),(12,9),
+        (13,8),(13,4),(13,16),
+        (14,2),(14,15),(14,17),
+        (15,11),(15,17),(15,20),
+        (16,13),(7,11),(7,19),
+        (17,20),(17,1),(17,2),
+        (18,10),(18,20),(18,1),
+        (19,12),(19,20),(19,3),
+        (20,1),(20,18),(20,20);
+        
+        
+insert into netflix_categoria (id_categoria, nombre_categoria)
+values 	(1, 'Acción'),
+		(2, 'Anime'),
+		(3, 'Ciencia ficción'),
+		(4, 'Clásicas'),
+		(5, 'Comedias'),
+		(6, 'Deportes'),
+		(7, 'Documentales'),
+		(8, 'Dramas'),
+		(9, 'Infantiles'),
+		(10, 'Independientes'),
+		(11, 'Latinoamericanas'),
+		(12, 'Musicales'),
+		(13, 'Policiales'),
+		(14, 'Romance'),
+		(15, 'Terror'),
+		(16, 'espiritualidad'),
+		(17, 'Hollywood'),
+		(18, 'Colombianos'),
+		(19, 'descargar'),
+		(20, 'favoritos');
+        
+insert into netflix_peliculas_categoria (fk_id_peliculas, fk_id_categoria)
+values 	(1,1),(1,3),(1,17),(1,20),
+		(2,10),(2,15),
+        (3,4),(3,3),
+        (4,6),(4,7),
+		(5,9),(5,5),
+        (6,5),(6,9),
+        (7,20),(7,3),(7,8),
+        (8,19),(8,3),(8,8),
+        (9,7),(9,4),
+        (10,8),(10,1),
+        (11,16),(11,8),
+        (12,18),(12,10),
+        (13,15),(13,8),
+        (14,12),(14,14),
+        (15,2),(15,3),(15,1),(15,8),
+        (16,11),
+        (17,14),(17,8),(17,4),
+        (18,13),(18,1),
+        (19,17),(19,9),(19,3),(19,8),
+        (20,1),(20,3),(20,17);
+        
+insert into netflix_peliculas_idioma (fk_id_idioma, fk_id_peliculas)
+values  (1,1),(2,1),
+		(1,2),(2,2),
+        (1,3),(2,3),
+        (1,4),(2,4),
+        (1,5),(2,5),
+        (1,6),(2,6),
+        (1,7),(2,7),
+        (1,8),(2,8),
+        (1,9),(2,9),
+        (1,10),(2,10),
+        (1,11),(2,11),
+        (1,12),(2,12),
+        (1,13),(2,13),
+        (1,14),(2,14),
+        (1,15),(2,15),
+        (1,16),(2,16),
+        (1,17),(2,17),
+        (1,18),(2,18),
+        (1,19),(2,19),
+        (1,20),(2,20);
+        
+insert into netflix_categoria_series (fk_id_series, fk_id_categoria)
+values	(1,3),(1,1),
+		(2,8),(2,13),
+        (3,8),
+        (4,8),(4,13),
+        (5,3),(5,1),
+        (6,3),(6,8),(6,14),
+        (7,1),(7,8),(7,15),
+        (8,3),(8,15),
+        (9,15),
+        (10,8),(10,13),
+        (11,13),
+        (12,20),(12,7),(12,15),
+        (13,9),(13,20),
+        (14,1),(14,15),
+        (15,8),(15,5),
+        (16,13),(16,1),
+        (17,8),(17,1),
+        (18,5),
+        (19,14),(19,15),(19,1),
+        (20,8),(20,15),(20,3);
+        
+insert into netflix_perfil_series (fk_id_perfil, fk_id_series)
+value 	(1,1),(1,3),(1,15),
+		(2,5),(2,10),(2,17),
+        (3,5),(3,7),(3,13),
+        (4,11),(4,1),(4,16),
+        (5,8),(5,12),(5,2),
+        (6,8),(5,9),(5,1),
+        (7,13),(7,15),(7,17),
+        (8,5),(8,3),(8,18),
+        (9,13),(9,19),(9,11),
+        (10,2),(10,7),(10,4),
+        (11,1),(11,5),(11,7),
+        (12,5),(12,6),(12,9),
+        (13,8),(13,4),(13,16),
+        (14,2),(14,15),(14,17),
+        (15,11),(15,17),(15,20),
+        (16,13),(7,11),(7,19),
+        (17,20),(17,1),(17,2),
+        (18,10),(18,20),(18,1),
+        (19,12),(19,20),(19,3),
+        (20,1),(20,18),(20,20);
+        
+insert into netflix_temporadas (id_temporadas, numero, sinopsis, fk_id_series)
+values	(1, 1, 'comienza cuando el rey Robert Baratheon ofrece a Ned Stark convertirse en la Mano del Rey.', 1),
+		(2, 1, 'Walter White decide entrar en el mundo de las drogas ilegales después de que le diagnosticaran cáncer de pulmón.', 2),
+		(3, 1, 'Es una serie alemana que se desarrolla en torno a los clubes de Berlín.', 3),
+        (4, 1, 'Los Hijos de la Anarquía son una banda de moteros con un único objetivo: su subsistencia.', 4),
+        (5, 1, 'La trama comienza al inicio del año vikingo', 5),
+        (6, 1, 'Claire es una enfermera que vive en plena Segunda Guerra Mundial', 6),
+        (7, 1, 'Drama sobrenatural con notables toques de humor creado por Eric Kripke', 7),
+        (8, 1, 'En el pequeño y aburrido pueblo de Hawkins, unan noche desaparece un niño llamado Will Byers.', 8),
+        (9, 1, 'Klaus Mikaelson, el primer vampiro híbrido, deja Mystic Falls y regresa a Nueva Orleans', 9),
+        (10, 1, 'creadrores de este drama policial que aborda la escena local del narcotráfico', 10),
+        (11, 1, 'Sherlock es un detective no oficial al que el inspector Lestrade recurre', 11),
+        (12, 1, 'tuvo lugar este accidente en Vladímir Ilich Lenin, a 3 kilómetros de Pripyat', 12),
+        (13, 1, 'De la pluma y mente de Matt Groening, los simpsons', 13),
+        (14, 1, 'La primera temporada es una adaptación de los primeros seis cómics de la serie homónima.', 14),
+        (15, 1, 'la sitcom por antonomasia.', 15),
+        (16, 1, 'un policía forense y un asesino en seriede un especializta que lleva una doble vida', 16),
+        (17, 1, 'Miniserie dramática ambientada en la Segunda Guerra Mundial.', 17),
+        (18, 1, 'Sheldon (Jim Parsons) y Leonard (Johnny Galecki) son dos científicos que comparten trabajo y apartamento.', 18),
+        (19, 1, 'MTV revitaliza para la pequeña pantalla la película De pelo en pecho (1985) de Michael J.', 19),
+        (20, 1, 'una pequeña ciudad alemana. Dos niños han desaparecido sin dejar rastro.', 20);
